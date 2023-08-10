@@ -1,6 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import { MUIThemeOverride } from "./MUIThemeOverride";
+import { MUIThemeProvider } from "./MUIThemeOverride";
 import { PropsWithChildren } from "../../shared/types";
 import { ClicheThemeType, ClicheThemeVars } from "./ClicheTheme";
 
@@ -13,7 +12,7 @@ const ClicheThemeProvider: React.FunctionComponent<PropsWithChildren> = ({
   children,
 }) => (
   <ClicheThemeContext.Provider value={ClicheThemeVars}>
-    <ThemeProvider theme={MUIThemeOverride}>{children}</ThemeProvider>
+    <MUIThemeProvider>{children}</MUIThemeProvider>
   </ClicheThemeContext.Provider>
 );
 
