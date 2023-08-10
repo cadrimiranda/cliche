@@ -1,21 +1,20 @@
-import TextField from "@mui/material/TextField";
 import ClicheThemeProvider from "./theme/ClicheThemeProvider";
-import Button from "@mui/material/Button";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import { SplashScreen } from "../pages/splash/SplashScreen";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SplashScreen />,
+  },
+]);
 
 function App() {
   return (
     <ClicheThemeProvider>
-      <Button disabled title="Large" size="large">
-        large
-      </Button>
-      <Button variant="outlined" title="Large" size="medium">
-        medium
-      </Button>
-      <Button title="Large" size="small">
-        small
-      </Button>
-      <TextField label="Text Field" disabled />
-      <TextField label="Text Field" />
+      <GlobalStyles styles={{ body: { margin: 0 } }} />
+      <RouterProvider router={router} />
     </ClicheThemeProvider>
   );
 }

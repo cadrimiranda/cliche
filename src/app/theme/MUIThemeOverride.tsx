@@ -6,7 +6,18 @@ import { ClicheThemeType } from "./ClicheTheme";
 import { getMUITextFieldOverride } from "./overrides/TextField";
 import { getMUIButtonOverride } from "./overrides/Button";
 
+declare module "@mui/material/styles" {
+  interface Theme {
+    clicheTheme: ClicheThemeType;
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    clicheTheme: ClicheThemeType;
+  }
+}
+
 export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
+  clicheTheme: theme,
   palette: {
     mode: "light",
     primary: {
@@ -83,7 +94,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
   components: {
     ...getMUITextFieldOverride(theme),
     ...getMUIButtonOverride(theme),
-  }
+  },
 });
 
 const MUIThemeProvider: React.FunctionComponent<PropsWithChildren> = ({
@@ -92,8 +103,7 @@ const MUIThemeProvider: React.FunctionComponent<PropsWithChildren> = ({
   const clicheTheme = useClicheTheme();
   const MUIThemeOverride = createTheme(getThemeOverride(clicheTheme));
 
-
-  return <ThemeProvider theme={MUIThemeOverride}>{children}</ThemeProvider>
-}
+  return <ThemeProvider theme={MUIThemeOverride}>{children}</ThemeProvider>;
+};
 
 export { MUIThemeProvider };

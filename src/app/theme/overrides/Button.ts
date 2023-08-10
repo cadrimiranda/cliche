@@ -1,7 +1,11 @@
-import { buttonBaseClasses, buttonClasses } from "@mui/material";
+import { Components, buttonBaseClasses, buttonClasses } from "@mui/material";
 import { ClicheThemeType } from "../ClicheTheme";
+import { Theme } from "@mui/material/styles";
 
-const getMUIButtonOverride = ({ colors, typography }: ClicheThemeType) => ({
+const getMUIButtonOverride = ({
+  colors,
+  typography,
+}: ClicheThemeType): Components<Omit<Theme, "components">> => ({
   MuiButton: {
     styleOverrides: {
       root: {
