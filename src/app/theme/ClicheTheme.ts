@@ -18,6 +18,7 @@ type Typography = {
   fontSize: string;
   fontWeight: number;
   lineHeight: string;
+  color?: string;
 };
 
 export type ClicheThemeType = {
@@ -194,31 +195,37 @@ export const ClicheThemeVars: ClicheThemeType = {
       fontSize: "40px",
       fontWeight: 700,
       lineHeight: "44px",
+      color: "#fff",
     },
     h2: {
       fontSize: "32px",
       fontWeight: 700,
       lineHeight: "38.4px",
+      color: "#fff",
     },
     h3: {
       fontSize: "28px",
       fontWeight: 700,
       lineHeight: "33.6px",
+      color: "#fff",
     },
     h4: {
       fontSize: "24px",
       fontWeight: 700,
       lineHeight: "28.8px",
+      color: "#fff",
     },
     h5: {
       fontSize: "22px",
       fontWeight: 700,
       lineHeight: "28.6px",
+      color: "#fff",
     },
     h6: {
       fontSize: "16px",
       fontWeight: 700,
       lineHeight: "17.6px",
+      color: "#fff",
     },
     bodyG: {
       fontSize: "16px",

@@ -52,11 +52,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
     },
   },
   typography: {
-    h1: {
-      fontSize: 40,
-      fontWeight: 700,
-      lineHeight: 44,
-    },
+    h1: theme.typography.h1,
     h2: {
       fontSize: 32,
       fontWeight: 700,
