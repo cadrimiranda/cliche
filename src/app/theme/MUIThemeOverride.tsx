@@ -4,6 +4,7 @@ import { PropsWithChildren } from "../../shared/types";
 import { useClicheTheme } from "./ClicheThemeProvider";
 import { ClicheThemeType } from "./ClicheTheme";
 import { getMUITextFieldOverride } from "./overrides/TextField";
+import { getMUIButtonOverride } from "./overrides/Button";
 
 export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
   palette: {
@@ -80,7 +81,8 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
     },
   },
   components: {
-    ...getMUITextFieldOverride(theme)
+    ...getMUITextFieldOverride(theme),
+    ...getMUIButtonOverride(theme),
   }
 });
 
