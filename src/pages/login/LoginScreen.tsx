@@ -13,7 +13,6 @@ export const LoginScreen = (): JSX.Element => {
     <LoginScreenContainer>
       <LoginHeader />
       <LoginTabMenu />
-      Login
     </LoginScreenContainer>
   );
 };

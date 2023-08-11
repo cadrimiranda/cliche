@@ -16,7 +16,7 @@ const getMUITextFieldOverride = ({
         "--TextField-brandBorderColor": colors.secondary.solid.main,
         "--TextField-brandBorderHoverColor": colors.legend2,
         "--TextField-brandBorderFocusedColor": colors.legend2,
-        [`.${inputAdornmentClasses.root}`]: {
+        [`.${inputAdornmentClasses.positionStart}`]: {
           color: colors.primary.solid.main,
         },
       },

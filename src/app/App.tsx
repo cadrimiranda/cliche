@@ -18,7 +18,14 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ClicheThemeProvider>
-      <GlobalStyles styles={{ body: { margin: 0 } }} />
+      <GlobalStyles
+        styles={{
+          body: { margin: 0 },
+          "*": {
+            boxSizing: "border-box",
+          },
+        }}
+      />
       <RouterProvider router={router} />
     </ClicheThemeProvider>
   );
