@@ -1,5 +1,6 @@
 import styled from "@mui/material/styles/styled";
 import { LoginHeader } from "./components/LoginHeader";
+import { LoginTabMenu } from "./components/TabMenu";
 
 const LoginScreenContainer = styled("div")(({ theme: { clicheTheme } }) => ({
   backgroundColor: clicheTheme.colors.background.white,
@@ -11,6 +12,7 @@ export const LoginScreen = (): JSX.Element => {
   return (
     <LoginScreenContainer>
       <LoginHeader />
+      <LoginTabMenu />
       Login
     </LoginScreenContainer>
   );

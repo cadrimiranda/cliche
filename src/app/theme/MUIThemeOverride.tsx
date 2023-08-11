@@ -5,6 +5,7 @@ import { useClicheTheme } from "./ClicheThemeProvider";
 import { ClicheThemeType } from "./ClicheTheme";
 import { getMUITextFieldOverride } from "./overrides/TextField";
 import { getMUIButtonOverride } from "./overrides/Button";
+import { getMUITabsOverride } from "./overrides/TabMenu";
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -90,6 +91,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
   components: {
     ...getMUITextFieldOverride(theme),
     ...getMUIButtonOverride(theme),
+    ...getMUITabsOverride(theme),
   },
 });
 
