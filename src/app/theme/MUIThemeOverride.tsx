@@ -83,10 +83,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
       fontSize: 16,
       lineHeight: 24,
     },
-    body2: {
-      fontSize: 14,
-      lineHeight: 21,
-    },
+    body2: theme.typography.bodyM,
   },
   components: {
     ...getMUITextFieldOverride(theme),

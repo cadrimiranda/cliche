@@ -79,6 +79,8 @@ const linkTypography = {
   lineHeight: "21px",
 };
 
+const textBody = "#637381";
+
 export const ClicheThemeVars: ClicheThemeType = {
   colors: {
     primary: {
@@ -173,8 +175,8 @@ export const ClicheThemeVars: ClicheThemeType = {
     },
     text: {
       title: "#2E3C4B",
-      body: "#637381",
-      disabled: "#637381",
+      body: textBody,
+      disabled: textBody,
     },
     background: {
       main: "#F8F8F8",
@@ -236,6 +238,7 @@ export const ClicheThemeVars: ClicheThemeType = {
       fontSize: "14px",
       fontWeight: 400,
       lineHeight: "21px",
+      color: textBody,
     },
     bodyP: {
       fontSize: "12px",
