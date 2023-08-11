@@ -1,8 +1,9 @@
 import Box from "@mui/material/Box";
-import Tab, { tabClasses } from "@mui/material/Tab";
+import Tab from "@mui/material/Tab";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
-import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import { LoginForm } from "./LoginForm";
+import { RegisterForm } from "./RegisterForm";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -22,11 +23,7 @@ function TabPanel(props: TabPanelProps) {
       className="cliche-tabpabel"
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -70,10 +67,10 @@ export const LoginTabMenu = (): JSX.Element => {
         <Tab label="Cadastrar" {...a11yProps(1)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Item One
+        <LoginForm />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <RegisterForm />
       </TabPanel>
     </Box>
   );

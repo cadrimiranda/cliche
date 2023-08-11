@@ -48,6 +48,15 @@ const getMUIButtonOverride = ({
       },
     },
   },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        borderRadius: "100%",
+        backgroundColor: colors.buttons.active,
+        color: colors.background.white,
+      },
+    },
+  },
 });
 
 export { getMUIButtonOverride };
