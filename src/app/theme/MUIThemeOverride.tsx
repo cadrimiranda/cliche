@@ -7,6 +7,7 @@ import { getMUITextFieldOverride } from "./overrides/TextField";
 import { getMUIButtonOverride } from "./overrides/Button";
 import { getMUITabsOverride } from "./overrides/TabMenu";
 import { getMUILinkOverride } from "./overrides/Link";
+import { getMUIChipOverride } from "./overrides/Chip";
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -22,6 +23,11 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
   clicheTheme: theme,
   palette: {
     mode: "light",
+    text: {
+      primary: theme.colors.text.title,
+      secondary: theme.colors.text.body,
+      disabled: theme.colors.text.disabled,
+    },
     primary: {
       main: "#FF77E6",
       light: "#FFE2FA",
@@ -91,6 +97,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
     ...getMUIButtonOverride(theme),
     ...getMUITabsOverride(theme),
     ...getMUILinkOverride(theme),
+    ...getMUIChipOverride(theme),
   },
 });
 

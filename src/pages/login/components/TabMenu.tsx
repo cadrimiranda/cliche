@@ -46,7 +46,9 @@ export const LoginTabMenu = (): JSX.Element => {
     <Box
       sx={{
         ".cliche-tabpabel": {
-          marginTop: "10px",
+          ".MuiBox-root": {
+            paddingTop: 0,
+          },
         },
       }}
     >
@@ -55,7 +57,7 @@ export const LoginTabMenu = (): JSX.Element => {
         onChange={handleChange}
         aria-label="login or register tab"
         sx={{
-          marginTop: "48px",
+          marginTop: "38px",
           marginBottom: "38px",
           [`.${tabsClasses.scroller}`]: {
             display: "flex",

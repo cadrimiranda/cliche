@@ -9,7 +9,7 @@ const LoginHeaderContainer = styled("div")(({ theme: { clicheTheme } }) => ({
   alignItems: "flex-end",
   borderRadius: "0px 0px 50px 0px",
   height: "245px",
-  padding: "44px 20px 24px 40px",
+  padding: "40px 20px 24px 40px",
 
   h1: {
     width: "60%",
