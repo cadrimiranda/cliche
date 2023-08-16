@@ -1,4 +1,9 @@
-import { Components, buttonClasses } from "@mui/material";
+import {
+  Components,
+  buttonClasses,
+  iconButtonClasses,
+  svgIconClasses,
+} from "@mui/material";
 import { ClicheThemeType } from "../ClicheTheme";
 import { Theme } from "@mui/material/styles";
 
@@ -51,9 +56,25 @@ const getMUIButtonOverride = ({
   MuiIconButton: {
     styleOverrides: {
       root: {
-        borderRadius: "100%",
         backgroundColor: colors.buttons.active,
         color: colors.background.white,
+        [`&.${iconButtonClasses.colorSecondary}`]: {
+          backgroundColor: colors.background.white,
+          color: colors.buttons.active,
+          [`.${svgIconClasses.root}`]: {
+            fill: colors.buttons.active,
+          },
+          "&:hover": {
+            backgroundColor: colors.primary.solid.lighter,
+          },
+          "&:focus": {
+            backgroundColor: colors.primary.solid.lighter,
+          },
+          "&:active": {
+            backgroundColor: colors.primary.solid.lighter,
+          },
+        },
+        borderRadius: "100%",
       },
     },
   },
