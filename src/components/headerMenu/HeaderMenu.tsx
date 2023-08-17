@@ -2,6 +2,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import IconButton from "@mui/material/IconButton";
 import NotificationsIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import { useClicheTheme } from "../../app/theme/ClicheThemeProvider";
+import { forwardRef } from "react";
 
 export const HeaderClicheLogo = () => {
   const theme = useClicheTheme();
@@ -56,9 +57,11 @@ export const HeaderClicheLogo = () => {
   );
 };
 
-export const HeaderMenu = () => {
+export const HeaderMenu = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <Grid
+      ref={ref}
+      component="div"
       sx={{
         padding: "16px 32px 10px 32px",
       }}
@@ -72,4 +75,4 @@ export const HeaderMenu = () => {
       </IconButton>
     </Grid>
   );
-};
+});

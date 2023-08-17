@@ -6,11 +6,19 @@ import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/AddCircleOutline";
 import BookmarkIcon from "@mui/icons-material/Bookmarks";
 import ProfileIcon from "@mui/icons-material/Portrait";
+import { forwardRef } from "react";
 
-export const BottomMenu = () => {
+export const BottomMenu = forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <Grid
-      sx={{ padding: "16px 32px" }}
+      component="div"
+      ref={ref}
+      sx={{
+        padding: "16px 32px",
+        position: "absolute",
+        width: "100%",
+        bottom: "0",
+      }}
       container
       justifyContent="space-between"
     >
@@ -31,4 +39,4 @@ export const BottomMenu = () => {
       </IconButton>
     </Grid>
   );
-};
+});
