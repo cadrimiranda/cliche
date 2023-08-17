@@ -1,5 +1,10 @@
 import { Page } from "../../components/page/Page";
+import { BookHighlight } from "./components/BookHighlight";
 
 export const HomeScreen = () => {
-  return <Page>Home</Page>;
+  return (
+    <Page>
+      <BookHighlight />
+    </Page>
+  );
 };

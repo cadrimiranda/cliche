@@ -29,6 +29,7 @@ export type ClicheThemeType = {
     success: ColorSchema;
     warning: ColorSchema;
     error: ColorSchema;
+    white: string;
     text: {
       title: string;
       body: string;
@@ -173,6 +174,7 @@ export const ClicheThemeVars: ClicheThemeType = {
         "48": "rgba(255, 86, 48, 0.48)",
       },
     },
+    white: "#FFFFFF",
     text: {
       title: "#2E3C4B",
       body: textBody,
