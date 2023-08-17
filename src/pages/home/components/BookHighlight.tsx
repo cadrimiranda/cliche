@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 
 import CoverImage from "../assets/bookhighlightcover.png";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 export const BookHighlight = () => {
   return (
