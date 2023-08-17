@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Unstable_Grid2";
 
 import HomeIcon from "@mui/icons-material/Home";
