@@ -60,6 +60,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
     },
   },
   typography: {
+    fontFamily: "Public Sans, sans-serif",
     h1: theme.typography.h1,
     h2: theme.typography.h2,
     h3: {

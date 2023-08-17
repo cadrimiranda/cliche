@@ -33,6 +33,7 @@ function App() {
           body: { margin: 0 },
           "*": {
             boxSizing: "border-box",
+            fontFamily: "Public Sans, sans-serif",
           },
         }}
       />
