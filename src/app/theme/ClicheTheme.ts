@@ -229,7 +229,6 @@ export const ClicheThemeVars: ClicheThemeType = {
       fontSize: "16px",
       fontWeight: 700,
       lineHeight: "17.6px",
-      color: "#fff",
     },
     bodyG: {
       fontSize: "16px",
