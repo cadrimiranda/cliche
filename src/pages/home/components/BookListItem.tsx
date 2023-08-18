@@ -50,8 +50,7 @@ export const BookListItem = ({ book }: BookListItemProps) => {
         {book.hasNewChapter && (
           <Box
             sx={{
-              display: "inline-flex",
-              gap: "10px",
+              boxShadow: "0px 1px 3px 0px rgba(46, 60, 75, 0.24)",
               height: "16px",
               width: "90px",
               padding: "2px",
