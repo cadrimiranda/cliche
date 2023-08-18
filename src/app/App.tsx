@@ -5,6 +5,7 @@ import { SplashScreen } from "../pages/splash/SplashScreen";
 import { LoginScreen } from "../pages/login/LoginScreen";
 import { OnboardingScreen } from "../pages/onboarding/OnboardingScreen";
 import { HomeScreen } from "../pages/home/HomeScreen";
+import { SearchScreen } from "../pages/search/SearchScreen";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <HomeScreen />,
+  },
+  {
+    path: "/search",
+    element: <SearchScreen />,
   },
 ]);
 
