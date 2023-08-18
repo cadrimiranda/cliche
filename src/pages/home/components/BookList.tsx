@@ -1,16 +1,35 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { BookListItem } from "./BookListItem";
+import { BookItem, BookListItem } from "./BookListItem";
 
-export const BookList = () => {
-  const books = [1, 2, 3, 4];
+type BookListProps = {
+  books: BookItem[];
+  listTitle: string;
+};
 
+export const BookList = ({ books, listTitle }: BookListProps) => {
   return (
-    <Box>
-      <Typography>Últimos vistos</Typography>
-      {books.map((book) => (
-        <BookListItem key={book} />
-      ))}
+    <Box sx={{ mt: "20px", ml: "24px" }}>
+      <Typography
+        color={(theme) => theme.clicheTheme.colors.text.title}
+        variant="h6"
+      >
+        {listTitle}
+      </Typography>
+      <Box
+        component="ul"
+        sx={{
+          display: "flex",
+          m: "10px 0 0",
+          p: 0,
+          overflowX: "auto",
+          "::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {books.map((book) => (
+          <BookListItem book={book} />
+        ))}
+      </Box>
     </Box>
   );
 };
