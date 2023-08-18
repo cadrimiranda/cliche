@@ -8,6 +8,7 @@ import { getMUIButtonOverride } from "./overrides/Button";
 import { getMUITabsOverride } from "./overrides/TabMenu";
 import { getMUILinkOverride } from "./overrides/Link";
 import { getMUIChipOverride } from "./overrides/Chip";
+import { getMUITypographyOverride } from "./overrides/Typography";
 
 declare module "@mui/material/styles" {
   interface Theme {
@@ -78,11 +79,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
       fontWeight: 700,
       lineHeight: 28.6,
     },
-    h6: {
-      fontSize: 16,
-      fontWeight: 700,
-      lineHeight: 17.6,
-    },
+    h6: theme.typography.h6,
     body1: theme.typography.bodyG,
     body2: theme.typography.bodyM,
   },
@@ -92,6 +89,7 @@ export const getThemeOverride = (theme: ClicheThemeType): ThemeOptions => ({
     ...getMUITabsOverride(theme),
     ...getMUILinkOverride(theme),
     ...getMUIChipOverride(theme),
+    ...getMUITypographyOverride(theme),
   },
 });
 
