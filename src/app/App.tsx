@@ -1,34 +1,7 @@
 import ClicheThemeProvider from "./theme/ClicheThemeProvider";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import GlobalStyles from "@mui/material/GlobalStyles";
-import { SplashScreen } from "../pages/splash/SplashScreen";
-import { LoginScreen } from "../pages/login/LoginScreen";
-import { OnboardingScreen } from "../pages/onboarding/OnboardingScreen";
-import { HomeScreen } from "../pages/home/HomeScreen";
-import { SearchScreen } from "../pages/search/SearchScreen";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <SplashScreen />,
-  },
-  {
-    path: "/login",
-    element: <LoginScreen />,
-  },
-  {
-    path: "/onboarding",
-    element: <OnboardingScreen />,
-  },
-  {
-    path: "/home",
-    element: <HomeScreen />,
-  },
-  {
-    path: "/search",
-    element: <SearchScreen />,
-  },
-]);
+import { routerEntries } from "./routerEntries";
 
 function App() {
   return (
@@ -42,7 +15,7 @@ function App() {
           },
         }}
       />
-      <RouterProvider router={router} />
+      <RouterProvider router={routerEntries} />
     </ClicheThemeProvider>
   );
 }
