@@ -30,6 +30,7 @@ export type ClicheThemeType = {
     warning: ColorSchema;
     error: ColorSchema;
     white: string;
+    orange: string;
     text: {
       title: string;
       body: string;
@@ -175,6 +176,7 @@ export const ClicheThemeVars: ClicheThemeType = {
       },
     },
     white: "#FFFFFF",
+    orange: "#EA6228",
     text: {
       title: "#2E3C4B",
       body: textBody,

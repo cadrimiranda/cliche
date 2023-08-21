@@ -2,14 +2,17 @@ import Box from "@mui/material/Box";
 import { BottomMenu } from "../bottomMenu/BottomMenu";
 import { HeaderMenu } from "../headerMenu/HeaderMenu";
 import { useEffect, useRef, useState } from "react";
+import { SxProps, Theme } from "@mui/material/styles";
 import { PropsWithChildren } from "../../shared/types";
 
 type PageProps = {
   header?: boolean;
+  sx?: SxProps<Theme>;
 };
 
 export const Page = ({
   children,
+  sx,
   header = true,
 }: PropsWithChildren<PageProps>) => {
   const refHeader = useRef<HTMLDivElement>(null);
@@ -33,6 +36,7 @@ export const Page = ({
           maxHeight: height,
           overflowX: "hidden",
           "::-webkit-scrollbar": { display: "none" },
+          ...sx,
         }}
       >
         {children}
