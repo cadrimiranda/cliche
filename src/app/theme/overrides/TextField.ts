@@ -3,7 +3,7 @@ import { ClicheThemeType } from "../ClicheTheme";
 import { inputLabelClasses } from "@mui/material/InputLabel";
 import { Components } from "@mui/material/styles/components";
 import { Theme } from "@mui/material/styles";
-import { inputAdornmentClasses } from "@mui/material";
+import { inputAdornmentClasses, inputBaseClasses } from "@mui/material";
 
 const getMUITextFieldOverride = ({
   colors,
@@ -18,6 +18,22 @@ const getMUITextFieldOverride = ({
         "--TextField-brandBorderFocusedColor": colors.legend2,
         [`.${inputAdornmentClasses.positionStart}`]: {
           color: colors.primary.solid.main,
+        },
+        [`.${inputBaseClasses.colorSecondary}`]: {
+          backgroundColor: colors.white,
+          borderRadius: "50px",
+          [`.${inputAdornmentClasses.positionStart}`]: {
+            color: "var(--TextBody)",
+          },
+          [`.${inputBaseClasses.input}`]: {
+            color: "var(--TextBody)",
+            borderRadius: "50px",
+          },
+          [`.${outlinedInputClasses.notchedOutline}`]: {
+            borderRadius: "50px",
+            borderColor: colors.white,
+            color: "var(--TextBody)",
+          },
         },
       },
     },
@@ -60,6 +76,7 @@ const getMUITextFieldOverride = ({
       },
     },
   },
+  MuiInputBase: {},
 });
 
 export { getMUITextFieldOverride };

@@ -1,7 +1,10 @@
 import Box from "@mui/material/Box";
 import { useClicheTheme } from "../../../app/theme/ClicheThemeProvider";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { TextField, Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
+import InputAdornment from "@mui/material/InputAdornment";
 
 const EyeIcon = () => {
   const {
@@ -15,9 +18,7 @@ const EyeIcon = () => {
       fill="none"
       sx={{
         top: "2px",
-        right: "0px",
-        width: "180px",
-        height: "134px",
+        right: "-110px",
         position: "absolute",
       }}
     >
@@ -61,6 +62,9 @@ export const SearchHeader = () => {
         <Typography
           color={(t) => t.clicheTheme.colors.buttons.active}
           variant="h1"
+          sx={{
+            width: "50%",
+          }}
         >
           QUEM PROCURA ACHA
         </Typography>
@@ -68,7 +72,15 @@ export const SearchHeader = () => {
       </Grid2>
       <TextField
         placeholder="Pesquise aqui"
-        sx={{ mt: "14px", borderRadius: "50px", backgroundColor: "white" }}
+        sx={{ mt: "14px" }}
+        color="secondary"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
       />
     </Box>
   );
