@@ -1,10 +1,12 @@
-import { Page } from "../../components/page/Page";
+import Box from "@mui/material/Box";
 import { SearchHeader } from "./component/SearchHeader";
+import { SearchResultList } from "./component/SearchResultList";
 
 export const SearchScreen = () => {
   return (
-    <Page header={false}>
+    <Box>
       <SearchHeader />
-    </Page>
+      <SearchResultList />
+    </Box>
   );
 };
