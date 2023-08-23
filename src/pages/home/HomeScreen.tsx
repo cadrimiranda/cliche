@@ -1,4 +1,3 @@
-import { Page } from "../../components/page/Page";
 import {
   lastSeemBooks,
   fictionAndAction,
@@ -11,7 +10,7 @@ import { BookList } from "./components/BookList";
 
 export const HomeScreen = () => {
   return (
-    <Page>
+    <>
       <BookHighlight />
       <BookList listTitle="Últimos vistos" books={lastSeemBooks} />
       <BookList
@@ -25,6 +24,6 @@ export const HomeScreen = () => {
         listTitle="Novas histórias"
         books={newBooks}
       />
-    </Page>
+    </>
   );
 };

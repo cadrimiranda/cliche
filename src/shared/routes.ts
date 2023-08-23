@@ -2,6 +2,7 @@ export const routes = {
   splashScreen: "/",
   login: "/login",
   onboarding: "/onboarding",
-  home: "/home",
+  home: "home",
+  homeHub: "/",
   search: "/search",
 };

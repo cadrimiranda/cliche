@@ -7,6 +7,7 @@ import {
   SplashScreen,
 } from "../pages";
 import { routes } from "../shared/routes";
+import { HomeHubScreen } from "../pages/homeHub/HomeHubScreen";
 
 const routerEntries = createBrowserRouter([
   {
@@ -22,12 +23,18 @@ const routerEntries = createBrowserRouter([
     element: <OnboardingScreen />,
   },
   {
-    path: routes.home,
-    element: <HomeScreen />,
-  },
-  {
-    path: routes.search,
-    element: <SearchScreen />,
+    path: routes.homeHub,
+    element: <HomeHubScreen />,
+    children: [
+      {
+        path: routes.home,
+        element: <HomeScreen />,
+      },
+      {
+        path: routes.search,
+        element: <SearchScreen />,
+      },
+    ],
   },
 ]);
 
