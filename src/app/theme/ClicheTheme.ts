@@ -31,6 +31,7 @@ export type ClicheThemeType = {
     error: ColorSchema;
     white: string;
     orange: string;
+    boxShadowCover: string;
     text: {
       title: string;
       body: string;
@@ -175,6 +176,8 @@ export const ClicheThemeVars: ClicheThemeType = {
         "48": "rgba(255, 86, 48, 0.48)",
       },
     },
+    boxShadowCover:
+      "linear-gradient(90deg, #2E3C4B 0%, rgba(46, 60, 75, 0.00) 100%)",
     white: "#FFFFFF",
     orange: "#EA6228",
     text: {

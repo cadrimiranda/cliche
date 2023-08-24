@@ -7,7 +7,7 @@ const fakeData: BookSearchResult[] = [
   {
     title: "O Terrário",
     authorName: "Alana Reis",
-    ageRecommendation: "",
+    ageRecommendation: "Livre",
     category: "Suspense",
     isFinished: true,
     rank: 1,
