@@ -21,6 +21,38 @@ const fakeData: BookSearchResult[] = [
     isFinished: false,
     newChapter: true,
   },
+  {
+    title: "A Queda do Protetor Sagrado",
+    authorName: "Silvio Emanuel",
+    ageRecommendation: "+12",
+    category: "Aventura",
+    isFinished: false,
+    newChapter: true,
+  },
+  {
+    title: "A Queda do Protetor Sagrado",
+    authorName: "Silvio Emanuel",
+    ageRecommendation: "+12",
+    category: "Aventura",
+    isFinished: false,
+    newChapter: true,
+  },
+  {
+    title: "A Queda do Protetor Sagrado",
+    authorName: "Silvio Emanuel",
+    ageRecommendation: "+12",
+    category: "Aventura",
+    isFinished: false,
+    newChapter: true,
+  },
+  {
+    title: "A Queda do Protetor Sagrado",
+    authorName: "Silvio Emanuel",
+    ageRecommendation: "+12",
+    category: "Aventura",
+    isFinished: false,
+    newChapter: true,
+  },
 ];
 
 export const SearchResultList = () => {

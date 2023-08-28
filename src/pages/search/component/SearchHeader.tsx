@@ -47,7 +47,8 @@ export const SearchHeader = () => {
       sx={{
         padding: "16px 32px 24px 32px",
         backgroundColor: (t) => t.palette.warning.main,
-        position: "relative",
+        position: "sticky",
+        top: 0,
         borderBottomRightRadius: "50px",
       }}
     >
