@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { getCover } from "../../home/assets/booksLists";
 import Chip from "@mui/material/Chip";
 import { useCallback } from "react";
@@ -48,7 +49,8 @@ export const SearchListItem = ({ book }: { book: BookSearchResult }) => {
       <Box
         sx={{
           padding: "10px 0px 10px 14px",
-          maxWidth: "170px",
+          maxWidth: "160px",
+          minWidth: "160px",
           "> h6, p": {
             textOverflow: "ellipsis",
             maxWidth: "170px",
@@ -69,6 +71,9 @@ export const SearchListItem = ({ book }: { book: BookSearchResult }) => {
           {getChip()}
         </Grid>
       </Box>
+      <Grid container justifyContent="center" alignItems="center">
+        <ChevronRightIcon />
+      </Grid>
     </Grid>
   );
 };
