@@ -57,7 +57,7 @@ const fakeData: BookSearchResult[] = [
 
 export const SearchResultList = () => {
   return (
-    <Box sx={{ mt: "32px", mx: "24px" }}>
+    <Box sx={{ mt: "32px" }}>
       <Typography variant="h6">Principais buscas</Typography>
       <Grid2>
         {fakeData.map((x) => (
