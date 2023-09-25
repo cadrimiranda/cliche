@@ -1,16 +1,18 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { SearchFilter } from "../SearchScreen";
 import { useCallback } from "react";
 import { SearchListTitles } from "./SearchListTitles";
 import { SearchMultiLineLists } from "./SearchMultiLineLists";
 import { SearchByUser } from "./SearchByUser";
+import { SearchFilter } from "./header/SearchHeader";
+import { SxProps, Theme } from "@mui/material";
 
 type SearchResultListProps = {
   filter?: SearchFilter;
+  sx?: SxProps<Theme>;
 };
 
-export const SearchResultList = ({ filter }: SearchResultListProps) => {
+export const SearchResultList = ({ filter, sx }: SearchResultListProps) => {
   const getRenderList = useCallback(() => {
     switch (filter) {
       case SearchFilter.title:
@@ -31,5 +33,9 @@ export const SearchResultList = ({ filter }: SearchResultListProps) => {
     }
   }, [filter]);
 
-  return <Box sx={{ mt: "32px" }}>{getRenderList()}</Box>;
+  return (
+    <Box sx={{ mt: "32px", overflowX: "hidden", overflowY: "scroll", ...sx }}>
+      {getRenderList()}
+    </Box>
+  );
 };

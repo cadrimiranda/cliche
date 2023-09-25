@@ -14,7 +14,7 @@ type BookListProps = {
 
 export const BookList = ({ books, listTitle, sx, chips }: BookListProps) => {
   return (
-    <Box sx={{ mt: "20px", ...sx }}>
+    <Box sx={{ mb: "20px", ...sx }}>
       <Typography
         color={(theme) => theme.clicheTheme.colors.text.title}
         variant="h6"

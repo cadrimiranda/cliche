@@ -7,7 +7,7 @@ import {
 } from "../../home/assets/booksLists";
 import { BookList } from "../../home/components/BookList";
 import Box from "@mui/material/Box";
-import { SearchFilter } from "../SearchScreen";
+import { SearchFilter } from "./header/SearchHeader";
 
 type SearchMultiLineListsProps = {
   filter: SearchFilter;
