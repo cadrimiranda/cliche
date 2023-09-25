@@ -18,6 +18,15 @@ export const getMUIChipOverride = ({
           backgroundColor: colors.buttons.active,
           color: colors.background.white,
         },
+        [`&.${chipClasses.colorInfo}`]: {
+          ...typography.history.tags,
+          padding: "2px 10px",
+          backgroundColor: colors.secondary.solid.lighter,
+          color: colors.secondary.solid.main,
+          [`.${chipClasses.label}`]: {
+            padding: 0,
+          },
+        },
       },
     },
   },

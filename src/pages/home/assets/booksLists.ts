@@ -1,7 +1,7 @@
 import { BookItem } from "../components/BookListItem";
 import { allCovers } from "../../../assets/booksCovers";
 
-const getCover = () =>
+export const getCover = () =>
   allCovers[Math.floor(Math.random() * (allCovers.length - 1))];
 const getHasNewChapter = () => Math.floor(Math.random() * 2) === 0;
 const getVolumn = () =>

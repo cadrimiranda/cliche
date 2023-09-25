@@ -12,7 +12,8 @@ export const BookHighlight = () => {
         width: "100vw",
         position: "relative",
         borderRadius: "0px 50px",
-        backgroundImage: `linear-gradient(90deg, #2E3C4B 0%, rgba(46, 60, 75, 0.00) 100%), url(${CoverImage})`,
+        backgroundImage: (t) =>
+          `${t.clicheTheme.colors.boxShadowCover}, url(${CoverImage})`,
       }}
     >
       {/* <img src={CoverImage} alt="book highlight cover image" /> */}
