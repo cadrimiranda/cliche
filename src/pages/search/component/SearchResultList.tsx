@@ -1,69 +1,35 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { BookSearchResult, SearchListItem } from "./SearchListItem";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { SearchFilter } from "../SearchScreen";
+import { useCallback } from "react";
+import { SearchListTitles } from "./SearchListTitles";
+import { SearchMultiLineLists } from "./SearchMultiLineLists";
+import { SearchByUser } from "./SearchByUser";
 
-const fakeData: BookSearchResult[] = [
-  {
-    title: "O Terrário",
-    authorName: "Alana Reis",
-    ageRecommendation: "Livre",
-    category: "Suspense",
-    isFinished: true,
-    rank: 1,
-    newChapter: false,
-  },
-  {
-    title: "A Queda do Protetor Sagrado",
-    authorName: "Silvio Emanuel",
-    ageRecommendation: "+12",
-    category: "Aventura",
-    isFinished: false,
-    newChapter: true,
-  },
-  {
-    title: "A Queda do Protetor Sagrado",
-    authorName: "Silvio Emanuel",
-    ageRecommendation: "+12",
-    category: "Aventura",
-    isFinished: false,
-    newChapter: true,
-  },
-  {
-    title: "A Queda do Protetor Sagrado",
-    authorName: "Silvio Emanuel",
-    ageRecommendation: "+12",
-    category: "Aventura",
-    isFinished: false,
-    newChapter: true,
-  },
-  {
-    title: "A Queda do Protetor Sagrado",
-    authorName: "Silvio Emanuel",
-    ageRecommendation: "+12",
-    category: "Aventura",
-    isFinished: false,
-    newChapter: true,
-  },
-  {
-    title: "A Queda do Protetor Sagrado",
-    authorName: "Silvio Emanuel",
-    ageRecommendation: "+12",
-    category: "Aventura",
-    isFinished: false,
-    newChapter: true,
-  },
-];
+type SearchResultListProps = {
+  filter?: SearchFilter;
+};
 
-export const SearchResultList = () => {
-  return (
-    <Box sx={{ mt: "32px" }}>
-      <Typography variant="h6">Principais buscas</Typography>
-      <Grid2>
-        {fakeData.map((x) => (
-          <SearchListItem book={x} />
-        ))}
-      </Grid2>
-    </Box>
-  );
+export const SearchResultList = ({ filter }: SearchResultListProps) => {
+  const getRenderList = useCallback(() => {
+    switch (filter) {
+      case SearchFilter.title:
+        return <SearchListTitles />;
+      case SearchFilter.category:
+        return <SearchMultiLineLists filter={filter} />;
+      case SearchFilter.lists:
+        return <SearchMultiLineLists filter={filter} />;
+      case SearchFilter.users:
+        return <SearchByUser />;
+      default:
+        return (
+          <Box>
+            <Typography variant="h6">Principais buscas</Typography>
+            <SearchListTitles />
+          </Box>
+        );
+    }
+  }, [filter]);
+
+  return <Box sx={{ mt: "32px" }}>{getRenderList()}</Box>;
 };

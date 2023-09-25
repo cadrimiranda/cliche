@@ -4,7 +4,7 @@ import { SearchResultList } from "./component/SearchResultList";
 import { useState, useMemo } from "react";
 import { SearchTabs } from "./component/SearchTabs";
 
-enum SearchFilter {
+export enum SearchFilter {
   title = "title",
   category = "category",
   users = "users",
@@ -28,7 +28,7 @@ export const SearchScreen = () => {
     }
 
     return (
-      <SearchTabs
+      <SearchTabs<SearchFilter>
         tabSelected={filter}
         tabs={options}
         handleChange={setFilter}
@@ -44,7 +44,7 @@ export const SearchScreen = () => {
       <SearchHeader handleSearch={setSearch} search={search} />
       <Box sx={{ mx: "24px" }}>
         {TabComponent}
-        <SearchResultList />
+        <SearchResultList filter={search ? filter : undefined} />
       </Box>
     </Box>
   );
