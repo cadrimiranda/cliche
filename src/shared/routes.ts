@@ -5,4 +5,5 @@ export const routes = {
   home: "home",
   homeHub: "/",
   search: "/search",
+  mylists: "/mylists",
 };
