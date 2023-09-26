@@ -24,7 +24,7 @@ export const SearchTabs = <TabType,>({
   sx,
 }: SearchTabsProps<TabType>) => {
   return (
-    <Box sx={sx}>
+    <Box sx={{ mt: "24px", ...sx }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={tabSelected}

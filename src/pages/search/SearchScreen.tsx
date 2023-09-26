@@ -1,7 +1,7 @@
-import Box from "@mui/material/Box";
 import { SearchFilter, SearchHeader } from "./component/header/SearchHeader";
 import { SearchResultList } from "./component/SearchResultList";
 import { useRef, useState } from "react";
+import { PageBodySpacing } from "../../components/page/PageBodySpacing";
 
 export const SearchScreen = () => {
   const refHeader = useRef<HTMLDivElement>(null);
@@ -17,7 +17,7 @@ export const SearchScreen = () => {
   }
 
   return (
-    <Box ref={refPage} sx={{ mx: "24px" }}>
+    <PageBodySpacing ref={refPage}>
       <SearchHeader
         ref={refHeader}
         handleSearch={setSearch}
@@ -29,6 +29,6 @@ export const SearchScreen = () => {
         sx={{ maxHeight }}
         filter={search ? filter : undefined}
       />
-    </Box>
+    </PageBodySpacing>
   );
 };
