@@ -34,7 +34,7 @@ export const SearchResultList = ({ filter, sx }: SearchResultListProps) => {
   }, [filter]);
 
   return (
-    <Box sx={{ mt: "32px", overflowX: "hidden", overflowY: "scroll", ...sx }}>
+    <Box sx={{ overflowX: "hidden", overflowY: "scroll", ...sx }}>
       {getRenderList()}
     </Box>
   );

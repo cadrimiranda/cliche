@@ -1,5 +1,6 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { SxProps, Theme } from "@mui/material";
 
 export type BookItem = {
   id: string;
@@ -13,19 +14,17 @@ type BookListItemProps = {
   book: BookItem;
 };
 
+export const bookListItemCardStyle: SxProps<Theme> = {
+  listStyleType: "none",
+  minWidth: "110px",
+  height: "155px",
+  mr: "8px",
+  position: "relative",
+};
+
 export const BookListItem = ({ book }: BookListItemProps) => {
   return (
-    <Box
-      sx={{
-        listStyleType: "none",
-        minWidth: "110px",
-        height: "155px",
-        mr: "8px",
-        position: "relative",
-      }}
-      key={book.title}
-      component="li"
-    >
+    <Box sx={bookListItemCardStyle} key={book.title} component="li">
       <img
         style={{ width: "100%", height: "auto" }}
         src={book.cover}

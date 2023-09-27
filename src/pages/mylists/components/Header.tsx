@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { useState, useMemo } from "react";
+import { useState, useMemo, forwardRef } from "react";
 import { SearchHeaderTitle } from "../../search/component/header/SearchHeaderTitle";
 import { MyListHeaderIcon } from "./HeaderIcon";
 import { SearchHeaderInput } from "../../search/component/header/SearchHeaderInput";
@@ -23,29 +23,31 @@ type Props = Pick<
   "handleFilter" | "filter"
 >;
 
-const MyListHeader = ({ filter, handleFilter }: Props) => {
-  const [search, setSearch] = useState<string>();
-  const { background } = useMemo(() => getSearchHeaderStyles(), []);
+const MyListHeader = forwardRef<HTMLDivElement, Props>(
+  ({ filter, handleFilter }, ref) => {
+    const [search, setSearch] = useState<string>();
+    const { background } = useMemo(() => getSearchHeaderStyles(), []);
 
-  return (
-    <Box>
-      <Box sx={background}>
-        <SearchHeaderTitle title="Quem guarda tem!">
-          <MyListHeaderIcon />
-        </SearchHeaderTitle>
-        <SearchHeaderInput
-          sx={{ mt: "14px" }}
-          onChange={(evt) => setSearch(evt.target.value)}
-          value={search}
+    return (
+      <Box ref={ref}>
+        <Box sx={background}>
+          <SearchHeaderTitle title="Quem guarda tem!">
+            <MyListHeaderIcon />
+          </SearchHeaderTitle>
+          <SearchHeaderInput
+            sx={{ mt: "14px" }}
+            onChange={(evt) => setSearch(evt.target.value)}
+            value={search}
+          />
+        </Box>
+        <SearchTabs<MyListsSearchFilter>
+          tabSelected={filter}
+          tabs={options}
+          handleChange={handleFilter}
         />
       </Box>
-      <SearchTabs<MyListsSearchFilter>
-        tabSelected={filter}
-        tabs={options}
-        handleChange={handleFilter}
-      />
-    </Box>
-  );
-};
+    );
+  }
+);
 
 export { MyListHeader };
