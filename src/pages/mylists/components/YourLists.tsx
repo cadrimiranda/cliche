@@ -11,6 +11,7 @@ import {
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { bookListItemCardStyle } from "../../home/components/BookListItem";
 import { SxProps, Theme } from "@mui/material";
+import { OverflowBox } from "../../../components/overflowBox/OverflowBox";
 
 export const YourLists = ({ sx }: { sx?: SxProps<Theme> }) => {
   const handleEdit = () => {
@@ -22,7 +23,7 @@ export const YourLists = ({ sx }: { sx?: SxProps<Theme> }) => {
   };
 
   return (
-    <Box sx={{ overflowX: "hidden", overflowY: "scroll", ...sx }}>
+    <OverflowBox sx={sx}>
       <Grid2 sx={{ mb: "20px" }}>
         <BookListTitle listTitle="Crie uma nova lista" />
         <Box
@@ -38,37 +39,6 @@ export const YourLists = ({ sx }: { sx?: SxProps<Theme> }) => {
           <AddIcon fontSize="large" color="action" />
         </Box>
       </Grid2>
-      <BookList
-        onEdit={handleEdit}
-        listTitle="Prepara o lencinho de papel"
-        books={lastSeemBooks}
-        chips={["982 seguidores", "Em alta"]}
-      />
-      <BookList
-        onEdit={handleEdit}
-        listTitle="Os opostos se atraem"
-        books={fictionAndAction}
-        chips={["20.678 seguidores"]}
-      />
-      <BookList
-        onEdit={handleEdit}
-        listTitle="Amor, amor e amor"
-        books={top10}
-        chips={["12 seguidores"]}
-      />
-      <BookList
-        onEdit={handleEdit}
-        listTitle="O final que você sempre desejou"
-        books={youMayLike}
-        chips={["132 seguidores"]}
-      />
-      <BookList
-        onEdit={handleEdit}
-        sx={{ marginBottom: "20px" }}
-        listTitle="Hentai"
-        books={newBooks}
-        chips={["1.568.982 seguidores"]}
-      />
-    </Box>
+    </OverflowBox>
   );
 };

@@ -26,7 +26,7 @@ export const SearchScreen = () => {
         search={search}
       />
       <SearchResultList
-        sx={{ maxHeight }}
+        sx={{ maxHeight, mt: "33px" }}
         filter={search ? filter : undefined}
       />
     </PageBodySpacing>
