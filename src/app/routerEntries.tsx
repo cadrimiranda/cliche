@@ -8,6 +8,7 @@ import {
 } from "../pages";
 import { routes } from "../shared/routes";
 import { HomeHubScreen } from "../pages/homeHub/HomeHubScreen";
+import { MyListsScreen } from "../pages/mylists/MyListsScreen";
 
 const routerEntries = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const routerEntries = createBrowserRouter([
       {
         path: routes.search,
         element: <SearchScreen />,
+      },
+      {
+        path: routes.mylists,
+        element: <MyListsScreen />,
       },
     ],
   },
